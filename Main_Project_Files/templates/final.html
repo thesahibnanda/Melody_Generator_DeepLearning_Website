@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Generated Midi Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        audio {
+            width: 80%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+        a, button{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7912b1;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover, button{
+            background-color: #512da8;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title" style="margin-bottom: 15%;">Melody Generator Website Powered By AI<br><center>Generated Midi</center></h1>
+
+    <p>
+        <a href="{{ url_for('static', filename='generated_midi_file.midi') }}" download>Download MIDI</a>
+    </p>
+
+    <p>
+        <a href="/again" style="background-color: yellowgreen; color: #333;">Wanna Try Again</a>
+    </p>
+
+    <p>
+        <a href="/" style="background-color: yellow; color: #333;">Logout</a>
+    </p>
+
+    <script>
+        function handleError() {
+            alert('An error occurred while trying to play the MIDI file. Please check the console for more details.');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadata for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Link to external JavaScript file with defer attribute -->
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <!-- Link to Font Awesome library for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Title of the webpage -->
+    <title>Upload Midi Page</title>
+
+    <!-- Internal CSS styles -->
+    <style>
+        /* Styles for the file upload container */
+        .file-upload-container {
+            background-color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+            height: 10000px;
+            width: 768px;
+            max-width: 100%;
+            min-height: 100px;
+            margin-top: 0px; /* Adjust as needed */
+            margin-bottom: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* Styles for the file input */
+        .file-upload-container input {
+            display: none;
+        }
+
+        /* Styles for the file upload label */
+        .file-upload-label {
+            background-color: #7912b1;
+            color: #fff;
+            font-size: 14px;
+            padding: 10px 20px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        /* Styles for the "Good To Go" button */
+        .file-upload-container button {
+            background-color: #4caf50;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .file-upload-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styles for the progress bar container */
+        .progress-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+
+        /* Styles for the progress bar itself */
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            border-radius: 8px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Heading section -->
+    <h1 class="title" style="margin-bottom: 15%;">Melody Generator Website Powered By AI<br><center>Upload Midi File
+            Page</center></h1>
+
+    <!-- Flag display section -->
+    <div style="margin-bottom: 20px;">
+        {% if Signup_flag %}
+        <p class="flag_style"><center>You Have <b>Signed Up</b> Successfully</center></p>
+        {% elif Login_flag %}
+        <p class="flag_style"><center>You Have <b>Logged In</b> Successfully</center></p>
+        {% endif %}
+    </div>
+
+    <!-- File upload container section -->
+    <div class="file-upload-container">
+        <!-- Form for file submission -->
+        <form action="/result" method="post" enctype="multipart/form-data">
+            <center>
+                <!-- Instructions for file format -->
+                <p style="margin-bottom: 12.5px; color: #230a2f;"><strong>Only .mid / .midi Format Allowed</strong></p>
+            </center>
+            <center>
+                <!-- File upload label and input -->
+                <label for="midiFile" class="file-upload-label">Upload <b>MIDI</b> File</label>
+                <input type="file" name="midiFile" id="midiFile" accept=".mid, .midi" required>
+
+                <!-- "Good To Go" button for form submission -->
+                <button type="submit">Good To Go</button>
+            </center>
+        </form>
+
+        <!-- Progress bar for file upload -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">0%</div>
+        </div>
+    </div>
+
+    <!-- Additional scripts for updating progress bar -->
+    <script>
+        const progressBar = document.getElementById('progressBar');
+        const fileInput = document.getElementById('midiFile');
+    
+        fileInput.addEventListener('change', function () {
+            progressBar.style.width = '0%';
+    
+            const file = this.files[0];
+            const fileSize = file.size;
+    
+            const xhr = new XMLHttpRequest();
+            const formData = new FormData();
+    
+            formData.append('file', file);
+    
+            xhr.upload.addEventListener('progress', function (event) {
+                if (event.lengthComputable) {
+                    const percentComplete = (event.loaded / fileSize) * 100;
+                    progressBar.style.width = percentComplete <= 100 ? percentComplete + '%' : '100%';
+                }
+            });
+    
+            // Listen for the load event to ensure that the progress text is updated after the upload is complete
+            xhr.addEventListener('load', function () {
+                progressBar.innerHTML = 'Upload complete';
+            });
+    
+            xhr.open('POST', '/result', true);
+            xhr.send(formData);
+        });
+    </script>
+    
+    
+</body>
+
+</html>

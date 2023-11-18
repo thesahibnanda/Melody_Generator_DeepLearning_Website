@@ -1,0 +1,65 @@
+# VSCode
+.vscode/
+
+# Node.js
+node_modules/
+
+# Compiled files
+dist/
+out/
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Typescript cache
+*.tsbuildinfo
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyo
+*.pyc
+*.pyo
+*.pyz
+*.pyw
+*.pywx
+*.pywz
+*.pywb
+
+# Editor-specific files
+*~
+.project
+*.swp
+*.swo
+*.swn
+*.bak
+*.pyc
+*.pyo
+*.pyd
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project Based
+sqlite.db
+generated_midi_file.midi
+Songs.txt
+tiny_dataset_preprocessed
+amount_dataset_preprocessed
+full_dataset_preprocessed
