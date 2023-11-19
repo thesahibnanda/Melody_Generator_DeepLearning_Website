@@ -9,6 +9,7 @@
 - [**Enhance Model**](#enhance-model)
 - [**Conclusion**](#conclusion)
 - [**References**](#references)
+- [**License**](#license)
 
 <br>
 
@@ -99,3 +100,7 @@ In Crafting This Musical Melody Generation Model, I Have Not Only Demonstrated T
 ## **References**
 - [YouTube Link For Login / Sign Up Page](https://youtu.be/PlpM2LJWu-s?t=9)
 - [Dataset](http://www.esac-data.org/)
+
+## **License**
+
+Check [MIT License](LICENSE)

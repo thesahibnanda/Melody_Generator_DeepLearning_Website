@@ -63,3 +63,4 @@ Songs.txt
 tiny_dataset_preprocessed
 amount_dataset_preprocessed
 full_dataset_preprocessed
+*.mid
