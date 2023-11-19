@@ -62,7 +62,7 @@ To Enhance Model You Can Do The Following
     ```
     **After Making Changes, Run [train.py](Main_Project_Files/model_building/train.py) In Same Folder Once** <br>
 - Go To The Folder `model_building` In `Main_Project_Files` & Edit [train.py](Main_Project_Files/model_building/train.py) As Follows 
-    Edit _Line 32_ (In `train()` Function): # You Can Replace `[256]` With `[256, 256]` For Two LSTM Layers Or As Per Your Need Add Numbers In List To Add As Many Layers You Like
+    Edit _Line 32_ (In `train()` Function): You Can Replace `[256]` With `[256, 256]` For Two LSTM Layers Or As Per Your Need Add Numbers In List To Add As Many Layers You Like
     ```py
     def train(epochs=50, batch_size=32, val_split=0.05, model_name = "model.h5"):
         # Import Training Sequences
