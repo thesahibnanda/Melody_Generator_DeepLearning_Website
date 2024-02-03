@@ -5,7 +5,8 @@
 
 ## **Table of Contents**
 - [**Introduction**](#introduction)
-- [**Working**](#working)
+- [**Starting App With Docker**](#starting-app-with-docker)
+- [**Starting App Without Docker**](#starting-app-without-docker)
 - [**Enhance Model**](#enhance-model)
 - [**Conclusion**](#conclusion)
 - [**References**](#references)
@@ -21,7 +22,28 @@ To Ensure Optimal Performance, I Have Undertaken an Extensive Preprocessing Phas
 
 The User Interaction Is Intuitive and Seamless. Individuals Can Input a Melody in Midi Format, and the Model, Utilizing Its Trained Knowledge, Generates a Novel Melody by Predicting Subsequent Notes and Rests. The Outcome Is Presented to the User in Midi Format, Providing a Synthesized Representation of the Generated Musical Composition. This Process Not Only Showcases the Capabilities of the Model but Also Allows Users to Witness Firsthand the Creative Output Derived From Their Initial Musical Input.
 
-## **Working**
+## **Starting App With Docker**
+
+**Note**: Docker Should Be Pre-Installed In Your Machine
+1. Open Terminal And Clone Repository
+    ```bash
+    git clone https://github.com/thesahibnanda/Melody_Generator_DeepLearning_Website.git
+    ```
+2. Now Run Following Command To Navigate Inside Repository's Main Project Files
+    ```bash
+    cd Melody_Generator_DeepLearning_Website/Main_Project_Files
+    ```
+3. Now Run Following Command To Build Docker Image
+    ```bash
+    docker build -t flask-app .
+    ```
+4. Now Execute Following Command To Run The Docker Container
+    ```bash
+    docker run -p 5000:5000 flask-app
+    ```
+5. Now Go To ```http://127.0.0.1:5000/``` In Any Browser And Get Your Hands On The Website
+
+## **Starting App Without Docker**
 
 1. Open Terminal And Clone Repository
     ```bash
@@ -31,13 +53,13 @@ The User Interaction Is Intuitive and Seamless. Individuals Can Input a Melody i
     ```bash
     cd Melody_Generator_DeepLearning_Website
     ```
-3. Now Install Requirements
-    ```bash
-    pip install -r requirements.txt
-    ```
-4. Now Execute Following Command In The Terminal To Navigate To The Folder `Main_Project_Files`
+3. Now Execute Following Command In The Terminal To Navigate To The Folder `Main_Project_Files`
     ```bash
     cd Main_Project_Files
+    ```
+4. Now Install Requirements
+    ```bash
+    pip install -r requirements.txt
     ```
 5. Now Run Flask App
     ```bash 
