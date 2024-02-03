@@ -1,5 +1,5 @@
 # **Melody Generator Website**
-![README](https://img.shields.io/badge/README-Project-blue.svg)
+![README](https://img.shields.io/badge/README-Melody_Generator_Website-blue.svg)
 
 <br>
 
