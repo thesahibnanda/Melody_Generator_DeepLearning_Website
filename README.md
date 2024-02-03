@@ -83,7 +83,7 @@ To Enhance Model You Can Do The Following
         inputs, targets = generate_sequence(int_songs)
         return inputs, targets, output_units
     ```
-    **After Making Changes, Run [train.py](Main_Project_Files/model_building/train.py) In Same Folder Once** <br>
+    **After Making Changes, Run [train.py](Main_Project_Files/model_building/train.py) In Same Folder Once** <br> <br>
 - Go To The Folder `model_building` In `Main_Project_Files` & Edit [train.py](Main_Project_Files/model_building/train.py) As Follows 
     Edit _Line 32_ (In `train()` Function): You Can Replace `[256]` With `[256, 256]` For Two LSTM Layers Or As Per Your Need Add Numbers In List To Add As Many Layers You Like
     ```py
@@ -106,7 +106,7 @@ To Enhance Model You Can Do The Following
         # Save Model
         model.save(model_name)  
     ```
-    **After Making Changes, Run `train.py`** <br>
+    **After Making Changes, Run [train.py](Main_Project_Files/model_building/train.py) In Same Folder Once** <br>
 
 ### You Can Make Both The Above Listed Changes
 
