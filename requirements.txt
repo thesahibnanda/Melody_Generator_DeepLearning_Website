@@ -1,5 +1,0 @@
-Flask==2.1.0
-cryptography==35.0.0
-numpy==1.21.2
-music21==7.1.2
-tensorflow==2.6.0

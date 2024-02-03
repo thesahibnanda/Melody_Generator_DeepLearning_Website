@@ -1,0 +1,5 @@
+Flask
+cryptography
+numpy
+music21
+tensorflow

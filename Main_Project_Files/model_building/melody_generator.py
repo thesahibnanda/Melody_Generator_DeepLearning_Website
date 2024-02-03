@@ -37,7 +37,6 @@ class MelodyGenerator:
 
         inputs = []
         for symbol in seed:
-            print("Here I Am")
             try:
                 if symbol in seed:  # This line can be removed
                     inputs.append(self._mappings[symbol])
